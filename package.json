@@ -1,0 +1,47 @@
+{
+  "name": "norri-kit",
+  "version": "0.0.1",
+  "description": "React UI-kit with density modes (comfortable for landing, compact for admin)",
+  "type": "module",
+  "main": "dist/norri-kit.cjs.js",
+  "module": "dist/norri-kit.es.js",
+  "types": "dist/types/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc --emitDeclarationOnly",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "lint": "eslint src --ext ts,tsx",
+    "format": "prettier --write 'src/**/*.{ts,tsx,css}'",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@typescript-eslint/eslint-plugin": "^8.56.0",
+    "@typescript-eslint/parser": "^8.56.0",
+    "@vitejs/plugin-react": "^5.1.4",
+    "eslint": "^10.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  },
+  "keywords": ["react", "ui-kit", "components", "design-system", "typescript"],
+  "author": "Norrikor",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Norrikor/norri-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Norrikor/norri-kit/issues"
+  },
+  "homepage": "https://github.com/Norrikor/norri-kit#readme"
+}
