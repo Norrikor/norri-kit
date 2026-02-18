@@ -7,7 +7,7 @@ export type DensityMode = 'comfortable' | 'compact';
 interface DensityContextType {
   mode: DensityMode;
   setMode: (mode: DensityMode) => void;
-  toggleMode: () => void; // удобно для переключения в сторибук/демо
+  toggleMode: () => void;
 }
 
 // Создаём контекст

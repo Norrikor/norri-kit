@@ -1,0 +1,125 @@
+/* src/themes/dark.css */
+.theme-dark,
+[data-theme="dark"] {
+  /* ========== БАЗОВЫЕ ОТСТУПЫ ИЗ SPACING.TS ========== */
+  --norri-space-0: 0px;
+  --norri-space-1: 4px;
+  --norri-space-2: 8px;
+  --norri-space-3: 12px;
+  --norri-space-4: 16px;
+  --norri-space-5: 20px;
+  --norri-space-6: 24px;
+  --norri-space-7: 28px;
+  --norri-space-8: 32px;
+  --norri-space-9: 36px;
+  --norri-space-10: 40px;
+  --norri-space-11: 44px;
+  --norri-space-12: 48px;
+  --norri-space-14: 56px;
+  --norri-space-16: 64px;
+  --norri-space-20: 80px;
+  --norri-space-24: 96px;
+
+  /* ========== РАДИУСЫ ИЗ BORDERRADIUS.TS ========== */
+  --norri-radius-none: 0px;
+  --norri-radius-sm: 4px;
+  --norri-radius-base: 6px;
+  --norri-radius-md: 8px;
+  --norri-radius-lg: 12px;
+  --norri-radius-xl: 16px;
+  --norri-radius-2xl: 20px;
+  --norri-radius-full: 9999px;
+
+  /* ========== ТИПОГРАФИКА ИЗ TYPOGRAPHY.TS ========== */
+  --norri-font-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --norri-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --norri-font-size-xs: 12px;
+  --norri-font-size-sm: 14px;
+  --norri-font-size-base: 16px;
+  --norri-font-size-lg: 18px;
+  --norri-font-size-xl: 20px;
+  --norri-font-size-2xl: 24px;
+  --norri-font-size-3xl: 30px;
+  --norri-font-size-4xl: 36px;
+  --norri-font-size-5xl: 48px;
+  
+  --norri-font-weight-normal: 400;
+  --norri-font-weight-medium: 500;
+  --norri-font-weight-semibold: 600;
+  --norri-font-weight-bold: 700;
+  
+  --norri-line-height-none: 1;
+  --norri-line-height-tight: 1.25;
+  --norri-line-height-snug: 1.375;
+  --norri-line-height-normal: 1.5;
+  --norri-line-height-relaxed: 1.625;
+  --norri-line-height-loose: 2;
+
+  /* ========== ЦВЕТА ИЗ COLORS.TS ========== */
+  /* Основные акцентные */
+  --norri-primary-light: #8b5cf6;
+  --norri-primary-dark: #a78bfa;
+  --norri-primary: var(--norri-primary-dark); /* для тёмной темы используем dark вариант */
+  
+  --norri-success-light: #22c55e;
+  --norri-success-dark: #4ade80;
+  --norri-success: var(--norri-success-dark);
+  
+  /* Состояния hover (на основе dark вариантов) */
+  --norri-primary-hover: #b79efb;      /* светлее основного dark */
+  --norri-primary-soft: #2e263f;       /* тёмный фиолетовый подложка */
+  --norri-success-hover: #6ee7b7;      /* светлее основного dark */
+  --norri-success-soft: #1a2e23;       /* тёмная зелёная подложка */
+  
+  /* Фиолетовая палитра (та же, что и в светлой — это просто цвета) */
+  --norri-purple-50: #f5f3ff;
+  --norri-purple-100: #ede9fe;
+  --norri-purple-200: #ddd6fe;
+  --norri-purple-300: #c4b5fd;
+  --norri-purple-400: #a78bfa;
+  --norri-purple-500: #8b5cf6;
+  --norri-purple-600: #7c3aed;
+  --norri-purple-700: #6d28d9;
+  --norri-purple-800: #5b21b6;
+  --norri-purple-900: #4c1d95;
+  
+  /* Зелёная палитра */
+  --norri-green-50: #f0fdf4;
+  --norri-green-100: #dcfce7;
+  --norri-green-200: #bbf7d0;
+  --norri-green-300: #86efac;
+  --norri-green-400: #4ade80;
+  --norri-green-500: #22c55e;
+  --norri-green-600: #16a34a;
+  --norri-green-700: #15803d;
+  --norri-green-800: #166534;
+  --norri-green-900: #14532d;
+  
+  /* Фоны — тёмные */
+  --norri-bg-primary: #0f172a;
+  --norri-bg-secondary: #1e293b;
+  --norri-bg-tertiary: #334155;
+  --norri-bg-elevated: #1e293b;
+  
+  /* Текст — светлый на тёмном фоне */
+  --norri-text-primary: #f8fafc;
+  --norri-text-secondary: #cbd5e1;
+  --norri-text-tertiary: #94a3b8;
+  --norri-text-inverse: #0f172a;
+  
+  /* Границы — тёмные */
+  --norri-border-light: #334155;
+  --norri-border-medium: #475569;
+  --norri-border-heavy: #64748b;
+  
+  /* Состояния — полупрозрачные белые */
+  --norri-hover-overlay: rgba(255, 255, 255, 0.05);
+  --norri-active-overlay: rgba(255, 255, 255, 0.1);
+  --norri-disabled-overlay: rgba(255, 255, 255, 0.25);
+  
+  /* Тени — глубже, но мягче */
+  --norri-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --norri-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --norri-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}

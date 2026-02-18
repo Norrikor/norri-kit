@@ -1,0 +1,69 @@
+.norri-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  font-family: var(--norri-font-family-sans, system-ui);
+  font-weight: var(--norri-font-weight-medium, 500);
+  transition: all 0.2s ease;
+  
+  /* Primary вариант */
+  background-color: var(--norri-primary);
+  color: var(--norri-text-inverse);
+  box-shadow: var(--norri-shadow-sm);
+}
+
+.norri-button:hover:not(:disabled) {
+  background-color: var(--norri-primary-hover);
+  box-shadow: var(--norri-shadow-md);
+}
+
+.norri-button:focus-visible {
+  outline: 2px solid var(--norri-primary);
+  outline-offset: 2px;
+}
+
+/* Secondary вариант */
+.norri-button--variant-secondary {
+  background-color: transparent;
+  color: var(--norri-text-primary);
+  border: 1px solid var(--norri-border-medium);
+  box-shadow: none;
+}
+
+.norri-button--variant-secondary:hover:not(:disabled) {
+  background-color: var(--norri-bg-tertiary);
+  border-color: var(--norri-border-heavy);
+}
+
+/* Размеры с правильными отступами */
+.norri-button--size-sm {
+  height: var(--norri-space-6);      /* 32px */
+  padding: 0 var(--norri-space-2);   /* 0 8px */
+  font-size: var(--norri-font-size-sm);  /* 14px */
+  border-radius: var(--norri-radius-sm); /* 4px */
+}
+
+.norri-button--size-md {
+  height: var(--norri-space-8);      /* 40px */
+  padding: 0 var(--norri-space-3);   /* 0 12px */
+  font-size: var(--norri-font-size-base); /* 16px */
+  border-radius: var(--norri-radius-md);  /* 6px */
+}
+
+.norri-button--size-lg {
+  height: var(--norri-space-10);     /* 48px */
+  padding: 0 var(--norri-space-4);   /* 0 16px */
+  font-size: var(--norri-font-size-lg);  /* 18px */
+  border-radius: var(--norri-radius-lg); /* 8px */
+}
+
+.norri-button--full-width {
+  width: 100%;
+}
+
+.norri-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

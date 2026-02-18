@@ -1,5 +1,7 @@
 import type { Preview } from '@storybook/react';
 import { DensityProvider } from '../src/contexts/DensityContext';
+import { ThemeProvider } from '../src/contexts/ThemeContext';
+import '../src/themes';
 
 const preview: Preview = {
   parameters: {
@@ -13,13 +15,14 @@ const preview: Preview = {
   decorators: [
     (Story, context) => {
       const density = context.globals.density as 'comfortable' | 'compact' || 'comfortable';
+      const theme = context.globals.theme as 'light' | 'dark' || 'light';
       
       return (
-        <DensityProvider defaultMode={density}>
-          <div style={{ padding: '20px' }}>
+        <ThemeProvider defaultMode={theme}>
+          <DensityProvider defaultMode={density}>
             <Story />
-          </div>
-        </DensityProvider>
+          </DensityProvider>
+        </ThemeProvider>
       );
     },
   ],
@@ -33,6 +36,18 @@ const preview: Preview = {
         items: [
           { value: 'comfortable', title: 'Comfortable', icon: 'circle' },
           { value: 'compact', title: 'Compact', icon: 'circle' },
+        ],
+      },
+    },
+    theme: {
+      name: 'Theme',
+      description: 'Light/Dark theme',
+      defaultValue: 'light',
+      toolbar: {
+        icon: 'sun',
+        items: [
+          { value: 'light', title: 'Light', icon: 'sun' },
+          { value: 'dark', title: 'Dark', icon: 'moon' },
         ],
       },
     },

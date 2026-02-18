@@ -1,23 +1,36 @@
-import React from 'react';
+import { useDensity } from '../../contexts/DensityContext';
+import { ButtonProps } from './Button.types';
+import './Button.css';
 
-export interface ButtonProps {
-  children: React.ReactNode;
-  variant?: 'primary' | 'secondary';
-  onClick?: () => void;
-}
-
-export const Button = ({ children, variant = 'primary', onClick }: ButtonProps) => {
+export const Button = ({ 
+  children, 
+  variant = 'primary', 
+  size: propSize,
+  fullWidth = false,
+  disabled = false,
+  onClick,
+  type = 'button',
+  className = '',
+}: ButtonProps) => {
+  const { mode } = useDensity();
+  
+  // Определяем размер из режима плотности, если не указан явно
+  const size = propSize || (mode === 'compact' ? 'sm' : 'lg');
+  
+  const classNames = [
+    'norri-button',
+    `norri-button--variant-${variant}`,
+    `norri-button--size-${size}`,
+    fullWidth ? 'norri-button--full-width' : '',
+    className,
+  ].filter(Boolean).join(' ');
+  
   return (
     <button
+      type={type}
+      className={classNames}
       onClick={onClick}
-      style={{
-        padding: '8px 16px',
-        background: variant === 'primary' ? '#8b5cf6' : '#e2e8f0',
-        color: variant === 'primary' ? 'white' : 'black',
-        border: 'none',
-        borderRadius: '6px',
-        cursor: 'pointer',
-      }}
+      disabled={disabled}
     >
       {children}
     </button>

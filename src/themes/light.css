@@ -1,0 +1,125 @@
+/* src/themes/light.css */
+.theme-light,
+[data-theme="light"] {
+  /* ========== БАЗОВЫЕ ОТСТУПЫ ИЗ SPACING.TS ========== */
+  --norri-space-0: 0px;
+  --norri-space-1: 4px;
+  --norri-space-2: 8px;
+  --norri-space-3: 12px;
+  --norri-space-4: 16px;
+  --norri-space-5: 20px;
+  --norri-space-6: 24px;
+  --norri-space-7: 28px;
+  --norri-space-8: 32px;
+  --norri-space-9: 36px;
+  --norri-space-10: 40px;
+  --norri-space-11: 44px;
+  --norri-space-12: 48px;
+  --norri-space-14: 56px;
+  --norri-space-16: 64px;
+  --norri-space-20: 80px;
+  --norri-space-24: 96px;
+
+  /* ========== РАДИУСЫ ИЗ BORDERRADIUS.TS ========== */
+  --norri-radius-none: 0px;
+  --norri-radius-sm: 4px;
+  --norri-radius-base: 6px;
+  --norri-radius-md: 8px;
+  --norri-radius-lg: 12px;
+  --norri-radius-xl: 16px;
+  --norri-radius-2xl: 20px;
+  --norri-radius-full: 9999px;
+
+  /* ========== ТИПОГРАФИКА ИЗ TYPOGRAPHY.TS ========== */
+  --norri-font-family-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --norri-font-family-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  --norri-font-size-xs: 12px;
+  --norri-font-size-sm: 14px;
+  --norri-font-size-base: 16px;
+  --norri-font-size-lg: 18px;
+  --norri-font-size-xl: 20px;
+  --norri-font-size-2xl: 24px;
+  --norri-font-size-3xl: 30px;
+  --norri-font-size-4xl: 36px;
+  --norri-font-size-5xl: 48px;
+  
+  --norri-font-weight-normal: 400;
+  --norri-font-weight-medium: 500;
+  --norri-font-weight-semibold: 600;
+  --norri-font-weight-bold: 700;
+  
+  --norri-line-height-none: 1;
+  --norri-line-height-tight: 1.25;
+  --norri-line-height-snug: 1.375;
+  --norri-line-height-normal: 1.5;
+  --norri-line-height-relaxed: 1.625;
+  --norri-line-height-loose: 2;
+
+  /* ========== ЦВЕТА ИЗ COLORS.TS ========== */
+  /* Основные акцентные */
+  --norri-primary-light: #8b5cf6;
+  --norri-primary-dark: #a78bfa;
+  --norri-primary: var(--norri-primary-light); /* по умолчанию для светлой темы */
+  
+  --norri-success-light: #22c55e;
+  --norri-success-dark: #4ade80;
+  --norri-success: var(--norri-success-light);
+  
+  /* Состояния hover (на основе primary) */
+  --norri-primary-hover: #7c3aed;
+  --norri-primary-soft: #ede9fe;
+  --norri-success-hover: #16a34a;
+  --norri-success-soft: #dcfce7;
+  
+  /* Фиолетовая палитра */
+  --norri-purple-50: #f5f3ff;
+  --norri-purple-100: #ede9fe;
+  --norri-purple-200: #ddd6fe;
+  --norri-purple-300: #c4b5fd;
+  --norri-purple-400: #a78bfa;
+  --norri-purple-500: #8b5cf6;
+  --norri-purple-600: #7c3aed;
+  --norri-purple-700: #6d28d9;
+  --norri-purple-800: #5b21b6;
+  --norri-purple-900: #4c1d95;
+  
+  /* Зелёная палитра */
+  --norri-green-50: #f0fdf4;
+  --norri-green-100: #dcfce7;
+  --norri-green-200: #bbf7d0;
+  --norri-green-300: #86efac;
+  --norri-green-400: #4ade80;
+  --norri-green-500: #22c55e;
+  --norri-green-600: #16a34a;
+  --norri-green-700: #15803d;
+  --norri-green-800: #166534;
+  --norri-green-900: #14532d;
+  
+  /* Фоны */
+  --norri-bg-primary: #ffffff;
+  --norri-bg-secondary: #f8fafc;
+  --norri-bg-tertiary: #f1f5f9;
+  --norri-bg-elevated: #ffffff;
+  
+  /* Текст */
+  --norri-text-primary: #0f172a;
+  --norri-text-secondary: #334155;
+  --norri-text-tertiary: #64748b;
+  --norri-text-inverse: #ffffff;
+  
+  /* Границы */
+  --norri-border-light: #e2e8f0;
+  --norri-border-medium: #cbd5e1;
+  --norri-border-heavy: #94a3b8;
+  
+  /* Состояния */
+  --norri-hover-overlay: rgba(0, 0, 0, 0.05);
+  --norri-active-overlay: rgba(0, 0, 0, 0.1);
+  --norri-disabled-overlay: rgba(0, 0, 0, 0.25);
+  
+  /* Тени (светлая тема — мягкие тени) */
+  --norri-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --norri-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --norri-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
