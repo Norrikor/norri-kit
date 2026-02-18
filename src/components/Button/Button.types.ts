@@ -2,7 +2,7 @@ export interface ButtonProps {
   /** Содержимое кнопки */
   children: React.ReactNode;
   /** Вариант кнопки */
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outline';
   /** Размер кнопки (если не указан, определяется из режима плотности) */
   size?: 'sm' | 'md' | 'lg';
   /** Растянуть на всю ширину */

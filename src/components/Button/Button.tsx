@@ -14,7 +14,6 @@ export const Button = ({
 }: ButtonProps) => {
   const { mode } = useDensity();
   
-  // Определяем размер из режима плотности, если не указан явно
   const size = propSize || (mode === 'compact' ? 'sm' : 'lg');
   
   const classNames = [

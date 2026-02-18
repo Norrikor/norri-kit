@@ -61,6 +61,8 @@
   --norri-primary-light: #8b5cf6;
   --norri-primary-dark: #a78bfa;
   --norri-primary: var(--norri-primary-dark); /* для тёмной темы используем dark вариант */
+  --norri-primary-soft: #2e263f;
+  --norri-primary-glow: rgba(167, 139, 250, 0.3);
   
   --norri-success-light: #22c55e;
   --norri-success-dark: #4ade80;

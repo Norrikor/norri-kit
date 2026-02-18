@@ -1,62 +1,111 @@
 .norri-button {
+  /* Базовые стили */
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: none;
   cursor: pointer;
-  font-family: var(--norri-font-family-sans, system-ui);
-  font-weight: var(--norri-font-weight-medium, 500);
-  transition: all 0.2s ease;
+  font-family: var(--norri-font-family-sans);
+  font-weight: var(--norri-font-weight-medium);
+  
+  /* Плавность Миядзаки + четкость League */
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.3, 1.1);
   
   /* Primary вариант */
   background-color: var(--norri-primary);
   color: var(--norri-text-inverse);
+  
+  /* Тени — баланс: не мультяшные, но с глубиной */
   box-shadow: var(--norri-shadow-sm);
+  
+  /* Скругления — умеренные, не квадратные и не круглые */
+  border-radius: var(--norri-radius-md);
+  
+  /* Легкая текстура для глубины (как в League, но деликатно) */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0)
+  );
 }
 
+/* Ховер — чуть приподнимается, тень глубже */
 .norri-button:hover:not(:disabled) {
   background-color: var(--norri-primary-hover);
-  box-shadow: var(--norri-shadow-md);
+  box-shadow: var(--norri-shadow-lg);
+  transform: translateY(-1px);
 }
 
+/* Активное состояние — вдавливается */
+.norri-button:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: var(--norri-shadow-sm);
+  transition: all 0.1s ease;
+}
+
+/* Фокус — видимый, но элегантный */
 .norri-button:focus-visible {
   outline: 2px solid var(--norri-primary);
   outline-offset: 2px;
+  box-shadow: var(--norri-shadow-md);
 }
 
-/* Secondary вариант */
+/* Secondary вариант — зеленый для успеха/позитива */
 .norri-button--variant-secondary {
+  background-color: var(--norri-success);
+  color: var(--norri-text-inverse);
+  box-shadow: var(--norri-shadow-sm);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.norri-button--variant-secondary:hover:not(:disabled) {
+  background-color: var(--norri-success-hover);
+  box-shadow: var(--norri-shadow-lg);
+}
+
+/* Outline вариант — для второстепенных действий */
+.norri-button--variant-outline {
   background-color: transparent;
   color: var(--norri-text-primary);
   border: 1px solid var(--norri-border-medium);
   box-shadow: none;
+  background-image: none;
 }
 
-.norri-button--variant-secondary:hover:not(:disabled) {
+.norri-button--variant-outline:hover:not(:disabled) {
   background-color: var(--norri-bg-tertiary);
-  border-color: var(--norri-border-heavy);
+  border-color: var(--norri-primary);
+  color: var(--norri-primary);
+  box-shadow: var(--norri-shadow-sm);
 }
 
-/* Размеры с правильными отступами */
+/* Размеры с учетом режимов плотности */
 .norri-button--size-sm {
-  height: var(--norri-space-6);      /* 32px */
-  padding: 0 var(--norri-space-2);   /* 0 8px */
-  font-size: var(--norri-font-size-sm);  /* 14px */
-  border-radius: var(--norri-radius-sm); /* 4px */
+  height: var(--norri-space-6);
+  padding: 0 var(--norri-space-2);
+  font-size: var(--norri-font-size-sm);
+  gap: var(--norri-space-1);
+  border-radius: var(--norri-radius-sm);
 }
 
 .norri-button--size-md {
-  height: var(--norri-space-8);      /* 40px */
-  padding: 0 var(--norri-space-3);   /* 0 12px */
-  font-size: var(--norri-font-size-base); /* 16px */
-  border-radius: var(--norri-radius-md);  /* 6px */
+  height: var(--norri-space-8);
+  padding: 0 var(--norri-space-3);
+  font-size: var(--norri-font-size-base);
+  gap: var(--norri-space-2);
+  border-radius: var(--norri-radius-md);
 }
 
 .norri-button--size-lg {
-  height: var(--norri-space-10);     /* 48px */
-  padding: 0 var(--norri-space-4);   /* 0 16px */
-  font-size: var(--norri-font-size-lg);  /* 18px */
-  border-radius: var(--norri-radius-lg); /* 8px */
+  height: var(--norri-space-10);
+  padding: 0 var(--norri-space-4);
+  font-size: var(--norri-font-size-lg);
+  gap: var(--norri-space-3);
+  border-radius: var(--norri-radius-lg);
 }
 
 .norri-button--full-width {
@@ -66,4 +115,31 @@
 .norri-button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Темная тема — глубже, с фиолетовым отливом */
+[data-theme="dark"] .norri-button--variant-primary {
+  box-shadow: 0 4px 12px -4px var(--norri-primary-glow, rgba(167, 139, 250, 0.3));
+}
+
+[data-theme="dark"] .norri-button--variant-primary:hover {
+  box-shadow: 0 8px 20px -6px var(--norri-primary-glow, rgba(167, 139, 250, 0.4));
+}
+
+[data-theme="dark"] .norri-button--variant-secondary {
+  box-shadow: 0 4px 12px -4px rgba(74, 222, 128, 0.2);
+}
+
+[data-theme="dark"] .norri-button--variant-secondary:hover {
+  box-shadow: 0 8px 20px -6px rgba(74, 222, 128, 0.3);
+}
+
+/* Светлая тема — теплее, контрастнее */
+[data-theme="light"] .norri-button--variant-primary {
+  box-shadow: 0 2px 8px -2px rgba(139, 92, 246, 0.3);
+}
+
+[data-theme="light"] .norri-button--variant-secondary {
+  box-shadow: 0 2px 8px -2px rgba(34, 197, 94, 0.3);
 }
