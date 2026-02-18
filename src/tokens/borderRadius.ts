@@ -1,4 +1,3 @@
-// src/tokens/borderRadius.ts
 export const borderRadius = {
   none: '0px',
   sm: '4px',

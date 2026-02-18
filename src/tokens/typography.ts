@@ -1,4 +1,3 @@
-// src/tokens/typography.ts
 export const typography = {
   fontFamily: {
     sans: 'system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',

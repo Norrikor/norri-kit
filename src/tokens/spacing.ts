@@ -1,4 +1,3 @@
-// src/tokens/spacing.ts
 export const spacing = {
   // Базовая сетка (4px)
   0: '0px',
